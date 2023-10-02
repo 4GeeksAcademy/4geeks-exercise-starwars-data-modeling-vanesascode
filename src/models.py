@@ -37,6 +37,15 @@ class Starships(Base):
     __tablename__ = 'starships'
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True, nullable=False)
+    model = Column(String(50))
+    starship_class = Column(String(50))
+    manufacturer = Column(String(50))
+    cost_in_credits = Column(Integer)
+    length = Column(Integer)
+    crew = Column(Integer)
+    passengers = Column(Integer)
+    cargo_capacity = Column(Integer)
+    consumables = Column(Integer)
     fav_starship = Column(Integer, ForeignKey('fav_starships.id'))
     fav_starship_relationship = relationship("Fav_tarships", uselist=False)
 
